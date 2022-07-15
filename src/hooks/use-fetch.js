@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
-const useFetch = () => {
+const useFetch = (typeOfRequest = true) => {     //if true => send / else => get
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [tasks, setTasks] = useState([]);
-
+  
   const sendData = async (taskText) => {
     setIsLoading(true);
     setError(null);
